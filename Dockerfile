@@ -1,10 +1,12 @@
-FROM mhart/alpine-node:base-6
+FROM mhart/alpine-node:6
 
 MAINTAINER Hideyuki TAKEUCHI <chimerast@gmail.com>
 
 WORKDIR /app
 
 ADD . .
+
+RUN ["npm", "install"]
 
 ENV PORT 80
 

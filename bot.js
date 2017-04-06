@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+process.on('SIGINT', process.exit)
+
 if (!process.env.SLACK_API_TOKEN) {
   console.error('Error: SLACK_API_TOKEN is not specified')
   process.exit(1)

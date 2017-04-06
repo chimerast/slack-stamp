@@ -1,9 +1,9 @@
 Slack Stamp Bot
 ====
 
-Slack Stamp Bot enables stamping emoji on Slack.
+'Slack Stamp Bot' enables stamping emoji on Slack.
 
-[![license](https://img.shields.io/github/license/chimerast/slack-stamp.svg)](LICENSE)
+[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 TBD
 
@@ -15,7 +15,7 @@ TBD
 
 ## License
 
-[Apache-2.0](https://github.com/chimerast/slack-stamp/blob/master/LICENCE)
+[Apache-2.0](LICENSE)
 
 ## Author
 

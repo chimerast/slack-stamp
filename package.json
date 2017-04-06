@@ -1,0 +1,23 @@
+{
+  "name": "slack-stamp",
+  "version": "0.1.0",
+  "description": "Stamp It!",
+  "keywords": [
+    "slack",
+    "stamp"
+  ],
+  "homepage": "https://github.com/chimerast/slack-stamp#readme",
+  "bugs": "https://github.com/chimerast/slack-stamp/issues",
+  "license": "Apache-2.0",
+  "author": "Hideyuki TAKEUCHI <chimerast@gmail.com>",
+  "main": "bot.js",
+  "repository": "chimerast/slack-stamp",
+  "dependencies": {
+    "async": "2.3.0",
+    "botkit": "0.4.9",
+    "dotenv": "4.0.0"
+  },
+  "engines": {
+    "node": "6.10.2"
+  }
+}

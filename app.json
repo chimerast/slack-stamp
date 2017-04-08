@@ -1,0 +1,11 @@
+{
+  "name": "slack-stamp",
+  "description": "'Slack Stamp Bot' enables stamping user defined emoji on Slack.",
+  "repository": "https://github.com/chimerast/slack-stamp",
+  "env": {
+    "SLACK_API_TOKEN": {
+      "description": "Bot user token",
+      "value": ""
+    }
+  }
+}

@@ -13,13 +13,13 @@ Slack Stamp Bot
 
 ## Usage
 
-#### 1. Create Slack Bot
+### 1. Create Slack Bot
 
 Go to https://my.slack.com/services/new/bot
 
 Create bot and copy your bot's API Token.
 
-#### 2. Deploy this program with bot user token
+### 2. Deploy this application with bot token
 
 With setting environment variable `SLACK_API_TOKEN` to copied token,
 
@@ -31,13 +31,13 @@ Deploy to Docker: `docker pull chimerast/slack-stamp` ([Docker Hub Repository](h
 
 or else.
 
-#### 3. Create Slack Slash Command
+### 3. Create Slack Slash Command
 
 Go to https://my.slack.com/services/new/slash-commands
 
 Create slash command and set URL Setting to `http(s)://<HOSTNAME YOU DEPLOYED>/slack/receive`.
 
-#### 4. Stamp It!
+### 4. Stamp It!
 
 Enter `/stamp :sugoi:` on Slack (`/stamp` is your slash command). You got stamp!
 

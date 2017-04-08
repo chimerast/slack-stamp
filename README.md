@@ -8,7 +8,7 @@ Slack Stamp Bot
 
 ## DEMO
 
-![demo](docs/images/demo.gif)
+<img src="docs/images/demo.gif" width="320">
 
 
 ## Usage

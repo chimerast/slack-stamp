@@ -1,3 +1,5 @@
+'use strict'
+
 require('dotenv').config()
 
 process.on('SIGINT', process.exit)
@@ -19,13 +21,16 @@ const checkError = (err) => {
   process.exit(1)
 }
 
-let botname = 'stamp'
+let prefs = {}
 
 const rtm = controller.spawn({
   token: process.env.SLACK_API_TOKEN
 }).startRTM((err, bot) => {
   checkError(err)
-  botname = bot.identity.name
+  prefs = Object.freeze({
+    botname: bot.identity.name,
+    displayRealNames: bot.team_info.prefs.display_real_names
+  })
 })
 
 controller.setupWebserver(process.env.PORT, (err, webserver) => {
@@ -40,7 +45,7 @@ controller.on('slash_command', (bot, message) => {
   }, (err, res) => {
     if (err) return bot.replyPrivate(message, err)
 
-    const profile = res.user.user.profile || {}
+    const user = res.user.user || {}
     const emoji = res.emoji.emoji || {}
 
     const attachments = message.text.match(/:[^:]+:/g)
@@ -56,13 +61,13 @@ controller.on('slash_command', (bot, message) => {
 
     const reply = {
       channel: message.channel,
-      username: profile.real_name,
-      icon_url: profile.image_72,
+      username: prefs.displayRealNames ? user.real_name : user.name,
+      icon_url: user.profile.image_72,
       attachments: attachments
     }
 
     rtm.send(reply, function (err, res) {
-      if (err === 'channel_not_found') return bot.replyPrivate(message, 'Error: This channel is private. Please run command `/invite @' + botname + '`.')
+      if (err === 'channel_not_found') return bot.replyPrivate(message, 'Error: This channel is private. Please run command `/invite @' + prefs.botname + '`.')
       if (err) return bot.replyPrivate(message, err)
 
       bot.replyAcknowledge()

@@ -48,7 +48,11 @@ controller.on('slash_command', (bot, message) => {
     const user = res.user.user || {}
     const emoji = res.emoji.emoji || {}
 
-    const attachments = message.text.match(/:[^:]+:/g)
+    const inputEmojiList = message.text.match(/:[^:]+:/g)
+
+    if (inputEmojiList === null) return bot.replyPrivate(message, 'Error: Typed emoji was not found.')
+
+    const attachments = inputEmojiList
       .map(s => emoji[s.replace(/:/g, '')])
       .filter(url => url)
       .map(url => ({

@@ -1,6 +1,6 @@
 {
   "name": "slack-stamp",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Stamp It!",
   "keywords": [
     "slack",
@@ -13,11 +13,11 @@
   "main": "bot.js",
   "repository": "chimerast/slack-stamp",
   "dependencies": {
-    "async": "2.3.0",
+    "async": "2.4.1",
     "botkit": "0.4.9",
     "dotenv": "4.0.0"
   },
   "engines": {
-    "node": "6.10.2"
+    "node": "8.1.2"
   }
 }
